@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fruit Ripeness Detector</title>
+    <style>
+      body {
+        background-color: #dcedc8;
+        font-family: 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 20px;
+      }
+          
+          .container {
+  			max-width: 1200px;
+  			margin: -50px auto 0;
+  			padding: 20px;
+  		}
+  		
+          .header {
+  			display: flex;
+  			align-items: center;
+  			justify-content: space-between;
+  			padding: 20px;
+  		}
+
+  		.navbar {
+  			display: flex;
+  			align-items: center;
+  		}
+
+  		.navbar a {
+  			margin-left: 20px;
+  			color: black;
+  			text-decoration: none;
+  			font-size: 20px;
+  			font-weight: bold;
+  		}
+
+  		.navbar a:hover {
+  			color: black;
+  		}
+
+      h1 {
+        text-align: center;
+        margin-bottom: -10px;
+      }
+
+      form {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      input[type="file"] {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+      }
+
+      input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+      }
+
+      p {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+  
+      <div class="container">
+  		<header class="header">
+  			<h1>Mango_Ripe_Advisor</h1>
+  			<nav class="navbar">
+  				<button><a href="/">Home</a></button>&nbsp;&nbsp;&nbsp;
+  				<button><a href="/predict">Assess Mango Ripeness</a></button>
+  			</nav>
+  		</header>
+  		</div>
+    <h1>Mango_Ripe_Advisor</h1>
+    <p>Kindly furnish the mango image you wish for us to evaluate and grade.</p>
+    <img src="https://4.imimg.com/data4/EX/IX/MY-26971534/alphonso-mango1-1000x1000.jpg" alt="Mango fruit" />
+    <form method="POST" action="/predict" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+    <p>Prediction: {{ prediction }}</p>
+    <img src="data:image/jpeg;base64,{{ image }}" />
+    {% endif %}
+  </body>
+</html>
