@@ -7,6 +7,4 @@ Enterprise Data Science in Practice badge certification :
 
 https://www.credly.com/badges/52b2f78c-366d-4a97-a941-1365c53fb12a/public_url
 
-For More info about project contact : 
-
-gkomalmp0605@gmail.com
+For More info about project contact : gkomalmp0605@gmail.com
