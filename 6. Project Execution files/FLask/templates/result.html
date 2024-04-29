@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit Ripeness Detector</title>
+    <style>
+        body {
+            background-color: #dcedc8;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a {
+            margin-left: 20px;
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: -10px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 50%;
+            height: auto;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            margin-top: 40px; 
+        }
+
+        .image-container img {
+            width: 25%;
+            max-height: 50%;
+            object-fit: contain;
+        }
+
+        .writeup {
+            width: 50%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-left: 20px;
+            }
+            
+                .prediction-box {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 50%;
+}
+
+.prediction-box h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.prediction-box img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  height: auto;
+}
+
+            
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Mango_Ripe_Advisor</h1>
+        <nav class="navbar">
+            <button><a href="/">Home</a></button>&nbsp;&nbsp;&nbsp;
+            <button><a href="/predict">Assess Mango Ripeness</a></button>
+        </nav>
+    </header>
+</div>
+<h1>Welcome to Mango_Ripe_Advisor</h1>
+<p>Scroll down to see the results</p>
+<section>
+<div class="image-container">
+    <div class="writeup">
+        <h2>Precautionary measures to be taken while Grading Mangos</h2>
+        <p>When grading mangos, it is important to follow certain precautionary measures to ensure accuracy and safety. These measures include:</p>
+        <ul>
+            <li>Wearing protective gloves to avoid contamination</li>
+            <li>Using clean and sanitized grading equipment</li>
+            <li>Inspecting each mango carefully for defects</li>
+            <li>Properly handling and storing graded mangos</li>
+        </ul>
+    </div>
+    <img src="https://cdn.dotpe.in/longtail/store-items/8055937/wXUuyuaS.jpeg" alt="Precautionary Measures" />
+</div>
+<div class="image-container">
+    <img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs11042-019-07784-x/MediaObjects/11042_2019_7784_Fig3_HTML.png" alt="Grading Steps" />
+    <div class="writeup">
+        <h2>Steps taken while grading a mango using Deep Learning</h2>
+        <p>The grading of mangos using deep learning involves the following steps:</p>
+        <ol>
+            <li>Collecting a large dataset of mango images</li>
+            <li>Labeling the images with corresponding ripeness grades</li>
+            <li>Training a deep learning model on the labeled dataset</li>
+            <li>Applying the trained model to predict the ripeness of new mango images</li>
+            <li>Verifying the predictions and refining the model if necessary</li>
+        </ol>
+    </div>
+s</div>
+
+<div class="prediction-box">
+  <h1>Graded-Quality: {{ prediction }}</h1>
+  <img src="data:image/jpeg;base64,{{ image }}" alt="Predicted Image" />
+</div>
+</section>
+
+</body>
+</html>
